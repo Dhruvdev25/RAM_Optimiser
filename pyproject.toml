@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ram-optimiser"
+version = "1.0.0"
+description = "A local-first Windows performance monitor and safe memory utility"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "RAM Optimiser contributors" }]
+dependencies = ["PySide6==6.8.3", "psutil>=5.9"]
+
+[project.optional-dependencies]
+gpu = ["nvidia-ml-py>=12.535"]
+build = ["pyinstaller>=6.3"]
+test = ["pytest>=8.0"]
+
+[project.scripts]
+ram-optimiser = "ram_optimiser.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.setuptools.package-data]
+ram_optimiser = ["assets/*.svg"]

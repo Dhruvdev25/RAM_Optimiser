@@ -1,0 +1,3 @@
+PySide6==6.8.3
+psutil>=5.9
+# Optional NVIDIA GPU metrics: nvidia-ml-py>=12.535
